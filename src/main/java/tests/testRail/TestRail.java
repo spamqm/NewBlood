@@ -20,6 +20,10 @@ public class TestRail extends TestBase {
         this.cases = cases;
     }
 
+    public TestRail() {
+        super();
+    }
+
 
     public TestRail testTestRail() throws Exception {
         myTimeOut();

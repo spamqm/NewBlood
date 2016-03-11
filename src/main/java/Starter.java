@@ -3,9 +3,6 @@ import tests.Login;
 import tests.dashboard.CreateNewLayout;
 import tests.testRail.TestRail;
 
-/**
- * Created by Gregory on 09.02.2016.
- */
 public class Starter {
     public static void main(String[] args) throws Exception {
 
@@ -15,7 +12,9 @@ public class Starter {
 
         //   new Login("FF","http://koverqm.narod.ru").testLogin();
 
-        new TestRail(20, "FF", "").testTestRail().finish();
+        //    new TestRail(20, "FF", "").testTestRail().finish();
+
+        new TestRail().testTestRail().finish();
 
     }
 }

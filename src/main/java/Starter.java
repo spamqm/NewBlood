@@ -6,6 +6,8 @@ import tests.testRail.TestRail;
 public class Starter {
     public static void main(String[] args) throws Exception {
 
+        // profile example ---  G:/greg-profile
+
         String branch_15 = "http://lax1qapp02.cinteractive.com:8080/quicktest15/";
 
         //new CreateNewLayout("FF", branch_15).testCreateNewLayout();
@@ -14,7 +16,7 @@ public class Starter {
 
         //    new TestRail(20, "FF", "").testTestRail().finish();
 
-        new TestRail("g:/greg-profile").testTestRail().finish();
+        new TestRail(args[0]).testTestRail().finish();
 
     }
 }

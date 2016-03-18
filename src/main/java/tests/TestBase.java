@@ -16,7 +16,6 @@ public class TestBase {
     public WebDriver wd;
 
     private String profileURL = "";  //default profile
-    private FirefoxProfile profile = new FirefoxProfile(new File(profileURL));
     private String browser = "FF";
     private String mainURL = "";
 
@@ -39,6 +38,7 @@ public class TestBase {
 
     public void start() {
 
+        FirefoxProfile profile = new FirefoxProfile(new File(profileURL));
 
         profile.setPreference("", "");
 

@@ -11,13 +11,13 @@ import tests.TestBase;
 public class CreateNewLayout extends TestBase {
 
 
-    public CreateNewLayout(String browser, String mainURL) {
-        super(browser, mainURL);
+    public CreateNewLayout(String profileURL, String browser, String mainURL) {
+        super(profileURL, browser, mainURL);
     }
 
-    /*public CreateNewLayout() {
-        super();
-    }*/
+    public CreateNewLayout(String profileURL) {
+        super(profileURL);
+    }
 
     @Test
 

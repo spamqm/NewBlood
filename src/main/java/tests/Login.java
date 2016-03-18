@@ -2,10 +2,15 @@ package tests;
 
 public class Login extends TestBase {
 
-    public Login(String browser, String URL) {
-        super(browser, URL);
+
+    public Login(String profileURL, String browser, String mainURL) {
+        super(profileURL, browser, mainURL);
     }
 
+
+    public Login(String profileURL) {
+        super(profileURL);
+    }
 
     public void testLogin() {
 

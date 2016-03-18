@@ -14,7 +14,7 @@ public class Starter {
 
         //    new TestRail(20, "FF", "").testTestRail().finish();
 
-        new TestRail().testTestRail().finish();
+        new TestRail("greg-profile").testTestRail().finish();
 
     }
 }

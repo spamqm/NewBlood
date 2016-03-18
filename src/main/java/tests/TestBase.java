@@ -15,34 +15,32 @@ public class TestBase {
 
     public WebDriver wd;
 
-
-    private FirefoxProfile profile = new FirefoxProfile(new File("g:/greg-profile"));
+    private String profileURL = "";  //default profile
+    private FirefoxProfile profile = new FirefoxProfile(new File(profileURL));
     private String browser = "FF";
     private String mainURL = "";
 
-    public TestBase() {
-
+    public TestBase(String profileURL) {
+        this.profileURL = profileURL;
         // Start browser
         start();
     }
 
-
-    public TestBase(String browser, String mainURL) {
+    public TestBase(String profileURL, String browser, String mainURL) {
         this.browser = browser;
         this.mainURL = mainURL;
+        this.profileURL = profileURL;
 
 
         // Start browser
         start();
 
     }
-
-
 
     public void start() {
 
 
-        profile.setPreference("","");
+        profile.setPreference("", "");
 
 
         if (browser == "FF") {
@@ -64,7 +62,6 @@ public class TestBase {
     }
 
 
-
     public void finish() {
 
         log("Browser is closed");
@@ -82,7 +79,6 @@ public class TestBase {
 
 
     // LOGIN
-
 
 
     public void testLogin(String username, String password) {

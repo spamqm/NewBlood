@@ -14,14 +14,15 @@ public class TestRail extends TestBase {
 
     int cases = -1;
 
-    public TestRail(int cases, String browser, String URL) {
+    public TestRail(int cases, String profileURL, String browser, String URL) {
         // Specified number of cases
-        super(browser, URL);
+        super(browser, profileURL, URL);
         this.cases = cases;
     }
 
-    public TestRail() {
-        super();
+    public TestRail(String profileURL) {
+        super(profileURL);
+
     }
 
 

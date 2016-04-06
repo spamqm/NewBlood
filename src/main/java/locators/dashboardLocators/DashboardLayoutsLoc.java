@@ -3,7 +3,7 @@ package locators.dashboardLocators;
 import locators.element;
 
 public enum DashboardLayoutsLoc implements element {
-    DASHBOARD_LAYOUTS_PAGE("admin/Layouts.epage?sp=Sdash"),
+    DASHBOARD_LAYOUTS_PAGE("/admin/Layouts.epage?sp=Sdash"),
 
 //Dashboard Table
 

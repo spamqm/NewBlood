@@ -8,15 +8,17 @@ public class Starter {
 
         // profile example ---  G:/greg-profile
 
-        String branch_15 = "http://lax1qapp02.cinteractive.com:8080/quicktest15/";
+        String branch_15 = "http://lax1qapp02.cinteractive.com:8080/quicktest15";
 
-        //new CreateNewLayout("FF", branch_15).testCreateNewLayout();
+        CreateNewLayout newItem = new CreateNewLayout(args[0], "FF", branch_15);
+        newItem.testCreateNewLayout();
+        newItem.finish();
 
         //   new Login("FF","http://koverqm.narod.ru").testLogin();
 
         //    new TestRail(20, "FF", "").testTestRail().finish();
 
-        new TestRail(args[0]).testTestRail().finish();
+        // new TestRail(args[0]).testTestRail().finish();
 
     }
 }

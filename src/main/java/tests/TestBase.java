@@ -36,6 +36,10 @@ public class TestBase {
 
     }
 
+    public String getMainUrl() {
+        return mainURL;
+    }
+
     public void start() {
 
         FirefoxProfile profile = new FirefoxProfile(new File(profileURL));
@@ -58,6 +62,11 @@ public class TestBase {
 
     public void myTimeOut() {
         wd.manage().timeouts().implicitlyWait(20, TimeUnit.
+                SECONDS);
+    }
+
+    public void myTimeOut(int time) {
+        wd.manage().timeouts().implicitlyWait(time, TimeUnit.
                 SECONDS);
     }
 
@@ -87,10 +96,16 @@ public class TestBase {
         log("Open: " + mainURL);
 
 
-        wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();
-        wd.findElement(By.xpath(LoginLoc.LOCALE_ENGLISH.get())).click();
-        log("Change locale");
+// locale is not available
 
+        myTimeOut(3);
+        if (isElementPresent(By.id(LoginLoc.LOCALE_SELECT_MENU.get()))) {
+
+            wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();
+            wd.findElement(By.xpath(LoginLoc.LOCALE_ENGLISH.get())).click();
+            log("Change locale");
+        }
+        myTimeOut();
 
         wd.findElement(By.id(LoginLoc.USER.get())).sendKeys(username);
         wd.findElement(By.id(LoginLoc.PASSWORD.get())).sendKeys(password);
@@ -102,7 +117,7 @@ public class TestBase {
     }
 
 
-    /*public boolean isElementPresent(By by) {
+    public boolean isElementPresent(By by) {
 
         try {
             wd.findElement(by);
@@ -113,7 +128,7 @@ public class TestBase {
         }
     }
 
-
+/*
     public void oneMore() {
 
         WebDriver driver = new FirefoxDriver();

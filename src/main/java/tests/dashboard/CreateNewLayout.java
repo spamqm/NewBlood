@@ -23,12 +23,13 @@ public class CreateNewLayout extends TestBase {
 
     public void testCreateNewLayout() throws InterruptedException {
 
+
         myTimeOut();
         // Log in page
         testLogin("gregoryk", "gregory82");
 
 
-        wd.get(wd.getCurrentUrl() + DashboardLayoutsLoc.DASHBOARD_LAYOUTS_PAGE.get());
+        wd.get(getMainUrl() + DashboardLayoutsLoc.DASHBOARD_LAYOUTS_PAGE.get());
         log("Open dash page");
 
 

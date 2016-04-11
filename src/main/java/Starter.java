@@ -10,6 +10,7 @@ public class Starter {
 
         String v15b = "http://lax1qapp02.cinteractive.com:8080/quicktest15";
         String v12 = "http://10.90.27.8:8080/qa_blank_12";
+        String trunk = "http://lax1qapp05.cinteractive.com:8080/quicktest";
 
         CreateNewLayout newItem = new CreateNewLayout(args[0], "FF", v12);
         newItem.testCreateNewLayout();

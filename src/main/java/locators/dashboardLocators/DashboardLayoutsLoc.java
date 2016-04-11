@@ -11,6 +11,7 @@ public enum DashboardLayoutsLoc implements element {
 
     //Step 1
     DASH_LAYOUT_NAME_BOX("DashLayoutName"),
+    DASH_LAYOUT_DESCRIPTION("DashLayoutDescription"),
     CONTINUE_BTN_XP("//*[@value='Continue...']"),
 
     //Step 2

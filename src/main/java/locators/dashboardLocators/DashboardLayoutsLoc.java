@@ -5,7 +5,11 @@ import locators.element;
 public enum DashboardLayoutsLoc implements element {
     DASHBOARD_LAYOUTS_PAGE("/admin/Layouts.epage?sp=Sdash"),
 
-//Dashboard Table
+    //Dashboard Table
+
+
+    REMOVE_LAYOUT_CHECKBOX("//a[text()='"),
+    REMOVE_LAYOUT("    ']/following::input[1]"),
 
     ADD_NEW_BTN_XP("//*[@value='Add New']"),
 
@@ -23,12 +27,15 @@ public enum DashboardLayoutsLoc implements element {
     FINISH_SAVE_CHANGES_BTN_XP("//input[@value=\"Finish & Save Changes\"]");
 
     private String locator;
+    private int position;
 
     DashboardLayoutsLoc(String locator) {
         this.locator = locator;
     }
 
+
     public String get() {
         return locator;
     }
+
 }

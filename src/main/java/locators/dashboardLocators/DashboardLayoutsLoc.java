@@ -33,6 +33,11 @@ public enum DashboardLayoutsLoc implements element {
         this.locator = locator;
     }
 
+    DashboardLayoutsLoc(String loc1, String loc2){
+        this.locator = loc1;
+
+    }
+
 
     public String get() {
         return locator;

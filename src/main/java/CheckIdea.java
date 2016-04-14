@@ -1,19 +1,23 @@
-/**
- * Created by Gregory on 10.02.2016.
- */
+import locators.dashboardLocators.TimesheetsPageLocators;
+
 public class CheckIdea {
     public static void main(String[] args) {
-        int i = 0;
+        String work_item_name = "GK projectLocators";
+        String temp1 = TimesheetsPageLocators.REMOVE_LAYOUT_CHECKBOX.get();
+        String temp2 = TimesheetsPageLocators.REMOVE_LAYOUT.get();
+        String temp3;
+
+        temp3 = TimesheetsPageLocators.REMOVE_LAYOUT_CHECKBOX.replace("some data");
 
 
-        for (; ; ) {
-            System.out.println(Integer.toString(1 + (int) (Math.random() * 15)));
-            i++;
-            if (i == 10) {
-                break;
-            }
+        //  log(temp1);
+        //   log(temp2+"\n\n\n");
+        log(temp3);
 
-        }
+    }
+
+    public static void log(String str) {
+        System.out.println(str);
 
     }
 }

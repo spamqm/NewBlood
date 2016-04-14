@@ -4,6 +4,10 @@ import locators.element;
 
 
 public enum TimesheetsPageLocators implements element {
+
+    REMOVE_LAYOUT_CHECKBOX("//a[text()='"),
+    REMOVE_LAYOUT("    ']/following::input[1]"),
+
     URL("/person/Timesheets"),
 
     WORK_ITEM_DIV("shared_popup_id"),

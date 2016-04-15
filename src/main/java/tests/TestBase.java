@@ -95,35 +95,54 @@ public class TestBase {
         wd.get(mainURL);
         log("Open: " + mainURL);
 
+        if (isElementPresent(By.xpath(LoginLoc.LOGOUT.get()))) {
+
+            log("User is already logged in");
+            return;
+
+        } else {
+
 
 // locale is not available
 
-        myTimeOut(3);
-        if (isElementPresent(By.id(LoginLoc.LOCALE_SELECT_MENU.get()))) {
+            myTimeOut(3);
+            if (isElementPresent(By.id(LoginLoc.LOCALE_SELECT_MENU.get()))) {
 
-            wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();
-            wd.findElement(By.xpath(LoginLoc.LOCALE_ENGLISH.get())).click();
-            log("Change locale");
+                wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();
+                wd.findElement(By.xpath(LoginLoc.LOCALE_ENGLISH.get())).click();
+                log("Change locale");
+            }
+            myTimeOut();
+
+            wd.findElement(By.id(LoginLoc.USER.get())).sendKeys(username);
+            wd.findElement(By.id(LoginLoc.PASSWORD.get())).sendKeys(password);
+            log("Enter Login & Password");
+
+
+            wd.findElement(By.id(LoginLoc.SUBMIT_BTN.get())).click();
+            log("Submit form");
         }
-        myTimeOut();
 
-        wd.findElement(By.id(LoginLoc.USER.get())).sendKeys(username);
-        wd.findElement(By.id(LoginLoc.PASSWORD.get())).sendKeys(password);
-        log("Enter Login & Password");
-
-
-        wd.findElement(By.id(LoginLoc.SUBMIT_BTN.get())).click();
-        log("Submit form");
     }
-
 
     public boolean isElementPresent(By by) {
 
         try {
             wd.findElement(by);
             return true;
-        } catch (Exception e) {
+        } catch (NoSuchElementException e) {
             log("Element " + by + " is NOT found:");
+            return false;
+        }
+    }
+
+    public boolean isElementVisible(By by) {
+
+        try {
+            wd.findElement(by);
+            return true;
+        } catch (ElementNotVisibleException e) {
+            log("Element " + by + " is NOT visible:");
             return false;
         }
     }

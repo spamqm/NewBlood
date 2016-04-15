@@ -9,6 +9,7 @@ public enum LoginLoc implements element {
 
 
     // IDs
+    LOGOUT("//a[@id='LinkSubmit']"),
 
     LOCALE_SELECT_MENU("localeSelect"),
     LOCALE_ENGLISH("//a[@id='1']"),

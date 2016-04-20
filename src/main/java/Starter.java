@@ -24,7 +24,7 @@ public class Starter {
 
         // new TestRail(args[0]).testTestRail().finish();
 
-        CreateNewProject createProject = new CreateNewProject(args[0], "FF", v12);
+        CreateNewProject createProject = new CreateNewProject(args[0], "FF", v15b);
         for (int i = 0; i < 9; i++) {
             createProject.testCreateNewProject();
         }

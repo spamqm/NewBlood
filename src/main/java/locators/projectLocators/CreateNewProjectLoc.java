@@ -2,9 +2,7 @@ package locators.projectLocators;
 
 import locators.element;
 
-/**
- * Created by Gregory on 14.04.2016.
- */
+
 public enum CreateNewProjectLoc implements element {
 
     //STEP 1
@@ -14,6 +12,7 @@ public enum CreateNewProjectLoc implements element {
     NEXT_BTN_ID("next"),
 
     //STEP 2
+
 
     NAME_ID("name"),
     LOCATION("//*[@id='popup_parentShow']"),
@@ -27,6 +26,9 @@ public enum CreateNewProjectLoc implements element {
     FINISH_BTN_ID("finish"),
     CREATE_AS_COMPLETED_YES("//th[contains(.,'Create')]/following::input[1]"),
     CREATE_AS_COMPLETED_NO("//th[contains(.,'Create')]/following::input[2]"),
+    REDBOX("//div[@class='MsgBox RedBoxBorder']"),
+
+    TAG("//th[contains(.,'000002')]/following::input[1]"),
 
     //STEP 3
 

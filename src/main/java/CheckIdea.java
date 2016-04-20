@@ -7,12 +7,14 @@ public class CheckIdea {
         String temp2 = TimesheetsPageLocators.REMOVE_LAYOUT.get();
         String temp3;
 
-        temp3 = TimesheetsPageLocators.REMOVE_LAYOUT_CHECKBOX.replace("some data");
-
+        temp3 = "0123456789";
 
         //  log(temp1);
+
         //   log(temp2+"\n\n\n");
-        log(temp3);
+
+        log(temp3.substring(temp3.length() - 1));
+
 
     }
 

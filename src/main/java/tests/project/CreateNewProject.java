@@ -2,7 +2,10 @@ package tests.project;
 
 import org.openqa.selenium.By;
 import locators.projectLocators.CreateNewProjectLoc;
+import org.openqa.selenium.WebElement;
 import tests.TestBase;
+
+import java.util.List;
 
 
 public class CreateNewProject extends TestBase {
@@ -52,13 +55,41 @@ public class CreateNewProject extends TestBase {
         //Finish
         wd.findElement(By.id(CreateNewProjectLoc.FINISH_BTN_ID.get())).click();
 
+        // Check warnings
+        if (isElementPresent(By.xpath(CreateNewProjectLoc.REDBOX.get()))) {
+            List<WebElement> we = wd.findElements(By.xpath(CreateNewProjectLoc.REDBOX.get()));
+            for (int i = 0; i < we.size(); i++) {
+                String temp = we.get(i).getText();
+
+                log("####### " + getTag(temp));
+
+                wd.findElement(By.xpath("//th[contains(.,'" + getTag(temp) + "')]/following::input[1]")).sendKeys("1234");
+            }
+            wd.findElement(By.id(CreateNewProjectLoc.FINISH_BTN_ID.get())).click();
+
+        }
+
+    }
+
+    public String getTag(String input) {
+        String changed = input.replace("You must enter a value for ", "");
+        return changed.substring(0, changed.length() - 1);
     }
 
     public void setProject() {
         currentProject = "GK - Auto Project - " + ((int) (Math.random() * 1000000));
     }
 
+    public void setProject(String currentProject) {
+        this.currentProject = currentProject;
+    }
+
     public void setWorkType() {
+
+    }
+
+    public void findProject() {
+
 
     }
 

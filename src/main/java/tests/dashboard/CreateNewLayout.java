@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import tests.TestBase;
+import tests.dashboard.RemoveLayout;
 
 
 public class CreateNewLayout extends TestBase {
@@ -71,15 +72,22 @@ public class CreateNewLayout extends TestBase {
 
 
         // Delete current layout
-        // open dashboard page
-        wd.get(getMainUrl() + DashboardLayoutsLoc.DASHBOARD_LAYOUTS_PAGE.get());
 
-        wd.findElement(By.xpath(DashboardLayoutsLoc.REMOVE_LAYOUT_CHECKBOX.replace(getCurrentlayout()))).click();
 
-        // find current layout
         log("TEST completed");
 
+        log("\n________ REMOVE DASHBOARD LAYOUT");
+        wd.get(getMainUrl() + DashboardLayoutsLoc.DASHBOARD_LAYOUTS_PAGE.get());
+        log("Open dashboard layouts page");
 
+        wd.findElement(By.xpath(DashboardLayoutsLoc.REMOVE_LAYOUT_CHECKBOX.replace(currentlayout))).click();
+        log("Select : " + currentlayout + " project for removing");
+
+        wd.findElement(By.xpath(DashboardLayoutsLoc.DELETE_BTN.get())).click();
+        log("Click on [Delete]");
+
+        wd.findElement(By.xpath(DashboardLayoutsLoc.DELETE_SELECTED_OK_BTN.get())).click();
+        log("Click on [OK]");
     }
 
 }

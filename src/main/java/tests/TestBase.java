@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
 
-    public WebDriver wd;
+    public static WebDriver wd;
 
     private String profileURL = "";  //default profile
     private String browser = "FF";
@@ -94,6 +94,7 @@ public class TestBase {
 
         wd.get(mainURL);
         log("Open: " + mainURL);
+        myTimeOut(3);
 
         if (isElementPresent(By.xpath(LoginLoc.LOGOUT.get()))) {
 
@@ -105,7 +106,7 @@ public class TestBase {
 
 // locale is not available
 
-            myTimeOut(3);
+
             if (isElementPresent(By.id(LoginLoc.LOCALE_SELECT_MENU.get()))) {
 
                 wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();

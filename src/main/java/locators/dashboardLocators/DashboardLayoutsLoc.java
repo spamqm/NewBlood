@@ -8,8 +8,8 @@ public enum DashboardLayoutsLoc implements element {
     //Dashboard Table
 
 
-    REMOVE_LAYOUT_CHECKBOX("//a[text()='"),
-    REMOVE_LAYOUT("    ']/following::input[1]"),
+    REMOVE_LAYOUT_CHECKBOX("//a[text()='" + LOCATOR_REPLACE_PATTERN +
+            "']/following::input[1]"),
 
     ADD_NEW_BTN_XP("//*[@value='Add New']"),
 
@@ -33,7 +33,7 @@ public enum DashboardLayoutsLoc implements element {
         this.locator = locator;
     }
 
-    DashboardLayoutsLoc(String loc1, String loc2){
+    DashboardLayoutsLoc(String loc1, String loc2) {
         this.locator = loc1;
 
     }
@@ -43,4 +43,9 @@ public enum DashboardLayoutsLoc implements element {
         return locator;
     }
 
+    public String replace(String rep) {
+        return locator.replace(LOCATOR_REPLACE_PATTERN, rep);
+    }
 }
+
+

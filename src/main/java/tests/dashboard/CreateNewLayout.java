@@ -74,10 +74,10 @@ public class CreateNewLayout extends TestBase {
         // open dashboard page
         wd.get(getMainUrl() + DashboardLayoutsLoc.DASHBOARD_LAYOUTS_PAGE.get());
 
+        wd.findElement(By.xpath(DashboardLayoutsLoc.REMOVE_LAYOUT_CHECKBOX.replace(getCurrentlayout()))).click();
+
         // find current layout
-
-
-
+        log("TEST completed");
 
 
     }

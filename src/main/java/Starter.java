@@ -13,9 +13,9 @@ public class Starter {
         String v12 = "http://10.90.27.8:8080/qa_blank_12";
         String trunk = "http://lax1qapp05.cinteractive.com:8080/quicktest";
 
-        /*CreateNewLayout newItem = new CreateNewLayout(args[0], "FF", v12);
+        CreateNewLayout newItem = new CreateNewLayout(args[0], "FF", v12);
         newItem.testCreateNewLayout();
-        newItem.finish();*/
+        newItem.finish();
 
 
         //   new Login("FF","http://koverqm.narod.ru").testLogin();
@@ -24,11 +24,11 @@ public class Starter {
 
         // new TestRail(args[0]).testTestRail().finish();
 
-        CreateNewProject createProject = new CreateNewProject(args[0], "FF", v15b);
+        /*CreateNewProject createProject = new CreateNewProject(args[0], "FF", v15b);
         for (int i = 0; i < 9; i++) {
             createProject.testCreateNewProject();
         }
-        createProject.finish();
+        createProject.finish();*/
 
     }
 }

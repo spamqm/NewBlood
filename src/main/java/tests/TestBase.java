@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 
-public class TestBase {
+public class TestBase implements testAble {
 
 
     public static WebDriver wd;

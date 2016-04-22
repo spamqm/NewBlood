@@ -3,8 +3,9 @@ package tests.dashboard;
 import locators.dashboardLocators.DashboardLayoutsLoc;
 import org.openqa.selenium.By;
 import tests.TestBase;
+import tests.testAble;
 
-public class RemoveLayout extends TestBase {
+public class RemoveLayout extends TestBase implements testAble {
     public RemoveLayout(String profileURL) {
         super(profileURL);
     }
@@ -14,6 +15,8 @@ public class RemoveLayout extends TestBase {
     }
 
     public void testRemoveLayout(String layoutName) {
+
+        testLogin("gregoryk", "gregory82");
 
 
         log("\n________ REMOVE DASHBOARD LAYOUT");

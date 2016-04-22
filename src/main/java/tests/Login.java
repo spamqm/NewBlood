@@ -1,6 +1,6 @@
 package tests;
 
-public class Login extends TestBase {
+public class Login extends TestBase implements testAble {
 
 
     public Login(String profileURL, String browser, String mainURL) {

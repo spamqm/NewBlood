@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import locators.projectLocators.CreateNewProjectLoc;
 import org.openqa.selenium.WebElement;
 import tests.TestBase;
+import tests.testAble;
 
 import java.util.List;
 
 
-public class CreateNewProject extends TestBase {
+public class CreateNewProject extends TestBase implements testAble {
 
 
     private static String currentProject;

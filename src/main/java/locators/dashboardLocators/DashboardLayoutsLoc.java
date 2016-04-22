@@ -11,9 +11,9 @@ public enum DashboardLayoutsLoc implements element {
     REMOVE_LAYOUT_CHECKBOX("//a[text()='" + LOCATOR_REPLACE_PATTERN +
             "']/following::input[1]"),
 
-    DELETE_SELECTED_OK_BTN("//input[@value='Ok']"),
+    DELETE_SELECTED_OK_BTN("//div[@id='uid']//input[@value='Ok']"),
     DELETE_SELECTED_CANCEL_BTN("//input[@value='Cancel']"),
-    DELETE_BTN("//div[@id='uid']//input[@value='Ok']"),
+    DELETE_BTN("//input[@value='Delete' and @id='uidShow']"),
 
 
     ADD_NEW_BTN_XP("//*[@value='Add New']"),

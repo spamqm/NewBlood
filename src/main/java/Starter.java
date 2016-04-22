@@ -1,6 +1,7 @@
 
 import tests.Login;
 import tests.dashboard.CreateNewLayout;
+import tests.dashboard.RemoveLayout;
 import tests.testRail.TestRail;
 import tests.project.CreateNewProject;
 
@@ -15,7 +16,11 @@ public class Starter {
 
         CreateNewLayout newItem = new CreateNewLayout(args[0], "FF", v12);
         newItem.testCreateNewLayout();
+        RemoveLayout newItem2 = new RemoveLayout(args[0], "FF", v12);
+        newItem2.testRemoveLayout(newItem.getCurrentlayout());
+
         newItem.finish();
+        newItem2.finish();
 
 
         //   new Login("FF","http://koverqm.narod.ru").testLogin();

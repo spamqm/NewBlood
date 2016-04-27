@@ -1,5 +1,4 @@
 import locators.dashboardLocators.DashboardLayoutsLoc;
-import locators.dashboardLocators.TimesheetsPageLocators;
 
 public class CheckIdea {
     public static void main(String[] args) {

@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import tests.TestBase;
-import tests.dashboard.RemoveLayout;
 import tests.testAble;
 
 

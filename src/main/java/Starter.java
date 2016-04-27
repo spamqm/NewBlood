@@ -1,9 +1,14 @@
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import tests.Login;
 import tests.dashboard.CreateNewLayout;
 import tests.dashboard.RemoveLayout;
 import tests.testRail.TestRail;
 import tests.project.CreateNewProject;
+
+import java.io.File;
 
 public class Starter {
     public static void main(String[] args) throws Exception {

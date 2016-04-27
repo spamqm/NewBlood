@@ -148,6 +148,15 @@ public class TestBase implements testAble {
         }
     }
 
+    public String getCurrentUser() {
+        return "";
+    }
+
+    public void openHomePage() {
+
+        wd.get(getMainUrl());
+    }
+
 /*
     public void oneMore() {
 

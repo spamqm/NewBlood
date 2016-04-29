@@ -3,20 +3,21 @@ package tests;
 public class Login extends TestBase implements testAble {
 
 
-    public Login(String profileURL, String browser, String mainURL) {
-        super(profileURL, browser, mainURL);
+    public Login() {
+        super();
     }
 
-
-    public Login(String profileURL) {
-        super(profileURL);
+    public Login(String mainURL) {
+        super(mainURL);
     }
 
-    public void testLogin() {
+    public Login(String mainURL, String profile) {
+        super(mainURL, profile);
+    }
 
-        System.out.println(wd.getCurrentUrl());
-
-        wd.get(wd.getCurrentUrl() + "pics.html");
+    public void testTestLogin() {
+        log("Test LOGIN");
+        testLogin();
 
 
     }

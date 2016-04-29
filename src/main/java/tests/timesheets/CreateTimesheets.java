@@ -1,36 +1,39 @@
 package tests.timesheets;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import tests.TestBase;
 import tests.testAble;
-import locators.timesheetsLocators.TimesheetsPageLocators;
+
+import static locators.timesheetsLocators.TimesheetsPageLocators.*;
 
 public class CreateTimesheets extends TestBase implements testAble {
 
-
-    public CreateTimesheets(String profileURL, WebDriver wd) {
-        super(profileURL);
+    public CreateTimesheets() {
     }
 
-    public CreateTimesheets(String profileURL, String browser, String mainURL) {
-        super(profileURL, browser, mainURL);
+    public CreateTimesheets(String mainURL) {
+        super(mainURL);
+    }
+
+    public CreateTimesheets(String mainURL, String profile) {
+        super(mainURL, profile);
     }
 
     public void testCreateTimesheets() {
 
-        String timeSheetsPage = TimesheetsPageLocators.TIMESHETS_PAGE.replace("");
+        String timeSheetsPage = TIMESHETS_PAGE.replace("");
 
-        testLogin("gregoryk", "gregory82");
+        testLogin();
         myTimeOut();
 
         log("Open the HOME page");
-
+        openHomePage();
 
         log("Open the Timesheets page");
-        wd.findElement(By.xpath(TimesheetsPageLocators.TIMESHETS_PAGE.get())).click();
+        openPage();
 
-        log("Open the work item menu");
+        log("Select work item");
+        selectWorkItem();
 
 
         log("Charge table with data");
@@ -50,9 +53,32 @@ public class CreateTimesheets extends TestBase implements testAble {
 
     }
 
-    protected void openTimesheetsPage() {
+    protected void openPage() {
 
+        wd.findElement(By.xpath(MENU_PROFILE.get())).click();
+        wd.findElement(By.xpath(TIMESHETS_PAGE.get())).click();
+    }
 
+    protected void save() {
+        wd.findElement(By.xpath(BUTTON_SAVE.get())).click();
+    }
+
+    protected void saveAndSubmit() {
+        wd.findElement(By.xpath((BUTTON_SAVE_SUBMIT.get()))).click();
+    }
+
+    protected void selectWorkItem() {
+        selectWorkItem(0);
+    }
+
+    protected void selectWorkItem(int i) {
+        wd.findElement(By.xpath(WORK_ITEM_EDITABLE.replace(i))).click();
+        wd.findElement(By.xpath(WORK_ITEM_EDITABLE.get())).click();
+    }
+
+    protected void chargeDay(int line, int day, String hour) {
+
+        wd.findElement(By.xpath(TIME_SHEET_TABLE_CELL_EDITABLE.replace(line, day))).sendKeys(hour);
     }
 
 }

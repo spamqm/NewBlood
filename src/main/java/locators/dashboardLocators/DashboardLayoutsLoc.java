@@ -11,25 +11,25 @@ public enum DashboardLayoutsLoc implements element {
     REMOVE_LAYOUT_CHECKBOX("//a[text()='" + LOCATOR_REPLACE_PATTERN +
             "']/following::input[1]"),
 
-    DELETE_SELECTED_OK_BTN("//div[@id='uid']//input[@value='Ok']"),
-    DELETE_SELECTED_CANCEL_BTN("//input[@value='Cancel']"),
-    DELETE_BTN("//input[@value='Delete' and @id='uidShow']"),
+    BUTTON_DELETE_SELECTED_OK("//div[@id='uid']//input[@value='Ok']"),
+    BUTTON_DELETE_SELECTED_CANCEL("//input[@value='Cancel']"),
+    BUTTON_DELETE("//input[@value='Delete' and @id='uidShow']"),
 
 
-    ADD_NEW_BTN_XP("//*[@value='Add New']"),
+    BUTTON_ADD_NEW("//*[@value='Add New']"),
 
     //Step 1
     DASH_LAYOUT_NAME_BOX("DashLayoutName"),
     DASH_LAYOUT_DESCRIPTION("DashLayoutDescription"),
-    CONTINUE_BTN_XP("//*[@value='Continue...']"),
+    BUTTON_CONTINUE("//*[@value='Continue...']"),
 
     //Step 2
-    COLUMN_MENU_VALUE_1_XP("//select[@name=\"Palette_avail\"]/option[1]"),
-    COLUMN_MENU_VALUE_2_XP("//select[@name=\"Palette_avail\"]/option[2]"),
+    MENU_COLUMN_VALUE_1("//select[@name=\"Palette_avail\"]/option[1]"),
+    MENU_COLUMN_VALUE_2("//select[@name=\"Palette_avail\"]/option[2]"),
     ARROW_RIGHT("//img[@name=\"Palette_selectImage\"]"),
 
     //Navigation
-    FINISH_SAVE_CHANGES_BTN_XP("//input[@value=\"Finish & Save Changes\"]");
+    BUTTON_FINISH_SAVE_CHANGES("//input[@value=\"Finish & Save Changes\"]");
 
     private String locator;
     private int position;

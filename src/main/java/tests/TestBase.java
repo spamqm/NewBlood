@@ -15,20 +15,28 @@ public class TestBase implements testAble {
 
     public static WebDriver wd;
 
-    private String profileURL = "";  //default profile
+    private String profile = "c:\\Develop\\Libs\\greg-profile";  //default profile
     private String browser = "FF";
-    private String mainURL = "";
+    private String mainURL = "http://10.90.27.8:8080/qa_blank_12";
 
-    public TestBase(String profileURL) {
-        this.profileURL = profileURL;
-        // Start browser
+    public TestBase() {
         start();
     }
 
-    public TestBase(String profileURL, String browser, String mainURL) {
+    public TestBase(String mainURL) {
+        this.mainURL = mainURL;
+        start();
+    }
+
+    public TestBase(String mainURL, String profile) {
+        this.mainURL = mainURL;
+        this.profile = profile;
+    }
+
+    public TestBase(String mainURL, String profile, String browser) {
         this.browser = browser;
         this.mainURL = mainURL;
-        this.profileURL = profileURL;
+        this.profile = profile;
 
 
         // Start browser
@@ -42,7 +50,7 @@ public class TestBase implements testAble {
 
     public void start() {
 
-        FirefoxProfile profile = new FirefoxProfile(new File(profileURL));
+        FirefoxProfile profile = new FirefoxProfile(new File(this.profile));
 
         profile.setPreference("", "");
 
@@ -50,7 +58,7 @@ public class TestBase implements testAble {
         if (browser == "FF") {
             wd = new FirefoxDriver(profile);
             wd.get(mainURL);
-            log("MAIN URL === " + mainURL);
+            log("MAIN URL === " + mainURL + "\n");
 
 
         } else {
@@ -89,24 +97,27 @@ public class TestBase implements testAble {
 
     // LOGIN
 
+    public void testLogin() {
+
+        testLogin("gregoryk", "gregory82");
+    }
 
     public void testLogin(String username, String password) {
 
+        log("\ntestLogin is started");
+
         wd.get(mainURL);
-        log("Open: " + mainURL);
+
+
         myTimeOut(3);
 
         if (isElementPresent(By.xpath(LoginLoc.LOGOUT.get()))) {
 
-            log("User is already logged in");
+            // log("User is already logged in");
             return;
 
         } else {
-
-
 // locale is not available
-
-
             if (isElementPresent(By.id(LoginLoc.LOCALE_SELECT_MENU.get()))) {
 
                 wd.findElement(By.id(LoginLoc.LOCALE_SELECT_MENU.get())).click();
@@ -123,6 +134,7 @@ public class TestBase implements testAble {
             wd.findElement(By.id(LoginLoc.SUBMIT_BTN.get())).click();
             log("Submit form");
         }
+        log("testLogin is finished\n");
 
     }
 
@@ -132,7 +144,7 @@ public class TestBase implements testAble {
             wd.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
-            log("Element " + by + " is NOT found:");
+            // log("Element " + by + " is NOT found:");
             return false;
         }
     }

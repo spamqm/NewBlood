@@ -1,16 +1,27 @@
 package tests.project;
 
 import org.openqa.selenium.By;
-import locators.projectLocators.CreateNewProjectLoc;
 import org.openqa.selenium.WebElement;
 import tests.TestBase;
 import tests.testAble;
 
 import java.util.List;
 
+import static locators.projectLocators.CreateNewProjectLoc.*;
+
 
 public class CreateNewProject extends TestBase implements testAble {
 
+    public CreateNewProject() {
+    }
+
+    public CreateNewProject(String mainURL) {
+        super(mainURL);
+    }
+
+    public CreateNewProject(String mainURL, String profile) {
+        super(mainURL, profile);
+    }
 
     private static String currentProject;
 
@@ -21,44 +32,44 @@ public class CreateNewProject extends TestBase implements testAble {
         myTimeOut();
 
 
-        wd.get(getMainUrl() + CreateNewProjectLoc.CREATE_NEW_PROJECT_PAGE.get());
+        wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE.get());
 
 //Step 1
 
-        wd.findElement(By.xpath(CreateNewProjectLoc.WORK_TYPE_NAME.get())).click(); //Select work type
+        wd.findElement(By.xpath(WORK_TYPE_NAME.get())).click(); //Select work type
         log(" Select work item");
 
 
-        wd.findElement(By.id(CreateNewProjectLoc.NEXT_BTN_ID.get())).click(); //Click on Next buttons
+        wd.findElement(By.id(NEXT_BTN_ID.get())).click(); //Click on Next buttons
         log("click on the [Next button]");
 //Step 2
-        wd.findElement(By.id(CreateNewProjectLoc.NAME_ID.get())).sendKeys(getCurrentProject()); //Name
+        wd.findElement(By.id(NAME_ID.get())).sendKeys(getCurrentProject()); //Name
         log("Project name: " + getCurrentProject());
         // wd.findElement(By.id(CreateNewProjectLoc.OBJECTIVE_ID.get())).sendKeys("Description" + getCurrentProject());
 
         // Location
 
-        wd.findElement(By.xpath(CreateNewProjectLoc.LOCATION.get())).click(); // Open Location window
-        wd.findElement(By.xpath(CreateNewProjectLoc.LOCATION_SEARCH_TAB.get())).click(); // Go to Search tab
-        wd.findElement(By.id(CreateNewProjectLoc.LOCATION_SEARCH_FIND_ID.get())).sendKeys("Gregory");
-        wd.findElement(By.xpath(CreateNewProjectLoc.LOCATION_GO.get())).click(); // Click on Go
+        wd.findElement(By.xpath(LOCATION.get())).click(); // Open Location window
+        wd.findElement(By.xpath(LOCATION_SEARCH_TAB.get())).click(); // Go to Search tab
+        wd.findElement(By.id(LOCATION_SEARCH_FIND_ID.get())).sendKeys("Gregory");
+        wd.findElement(By.xpath(LOCATION_GO.get())).click(); // Click on Go
 
 
-        if (isElementPresent(By.xpath(CreateNewProjectLoc.LOCATION_SEARCH_TAB_WORK_ITEM.get()))) {
-            log("Element is present: " + CreateNewProjectLoc.LOCATION_SEARCH_TAB_WORK_ITEM.get());
+        if (isElementPresent(By.xpath(LOCATION_SEARCH_TAB_WORK_ITEM.get()))) {
+            log("Element is present: " + LOCATION_SEARCH_TAB_WORK_ITEM.get());
         }
 
 
-        wd.findElement(By.xpath(CreateNewProjectLoc.LOCATION_SEARCH_TAB_WORK_ITEM.get())).click(); //Select work item
+        wd.findElement(By.xpath(LOCATION_SEARCH_TAB_WORK_ITEM.get())).click(); //Select work item
         log("Location is selected");
 
         // Select tags
         //Finish
-        wd.findElement(By.id(CreateNewProjectLoc.FINISH_BTN_ID.get())).click();
+        wd.findElement(By.id(FINISH_BTN_ID.get())).click();
 
         // Check warnings
-        if (isElementPresent(By.xpath(CreateNewProjectLoc.REDBOX.get()))) {
-            List<WebElement> we = wd.findElements(By.xpath(CreateNewProjectLoc.REDBOX.get()));
+        if (isElementPresent(By.xpath(REDBOX.get()))) {
+            List<WebElement> we = wd.findElements(By.xpath(REDBOX.get()));
             for (int i = 0; i < we.size(); i++) {
                 String temp = we.get(i).getText();
 
@@ -66,7 +77,7 @@ public class CreateNewProject extends TestBase implements testAble {
 
                 wd.findElement(By.xpath("//th[contains(.,'" + getTag(temp) + "')]/following::input[1]")).sendKeys("1234");
             }
-            wd.findElement(By.id(CreateNewProjectLoc.FINISH_BTN_ID.get())).click();
+            wd.findElement(By.id(FINISH_BTN_ID.get())).click();
 
         }
 
@@ -98,12 +109,7 @@ public class CreateNewProject extends TestBase implements testAble {
         return currentProject;
     }
 
-    public CreateNewProject(String profileURL) {
-        super(profileURL);
-    }
-
-    public CreateNewProject(String profileURL, String browser, String mainURL) {
-        super(profileURL, browser, mainURL);
-    }
 
 }
+
+

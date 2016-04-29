@@ -1,16 +1,17 @@
 package tests.testRail;
 
 
-import locators.testRailLocators.*;
 import org.openqa.selenium.By;
 import tests.TestBase;
+
+import static locators.testRailLocators.TestRailLocator.*;
 
 public class TestRail extends TestBase {
 
 
     // Locators;
 
-    String mainPage = TestRailLocator.TESTRAIL_MAIN_PAGE.get();
+    String mainPage = TESTRAIL_MAIN_PAGE.get();
 
     int cases = -1;
 
@@ -40,36 +41,36 @@ public class TestRail extends TestBase {
         } else return;*/
 
 
-        wd.findElement(By.id(TestRailLocator.NAME_ID.get())).clear();
-        wd.findElement(By.id(TestRailLocator.NAME_ID.get())).sendKeys(TestRailLocator.NAME.get());
+        wd.findElement(By.id(NAME_ID.get())).clear();
+        wd.findElement(By.id(NAME_ID.get())).sendKeys(NAME.get());
         log("Enter name");
-        wd.findElement(By.id(TestRailLocator.PASSWORD_ID.get())).sendKeys(TestRailLocator.PASSWORD.get());
+        wd.findElement(By.id(PASSWORD_ID.get())).sendKeys(PASSWORD.get());
         log("Enter password");
-        wd.findElement(By.xpath(TestRailLocator.LOGIN_SUBMIT_BTN_XP.get())).click();
+        wd.findElement(By.xpath(LOGIN_SUBMIT_BTN_XP.get())).click();
         log("Submit");
 
 
         for (int i = 0; ; i++) {
 
             try {
-                wd.get(TestRailLocator.TEST_RUN.get());
-                log("Current TEST RUN opens:  " + TestRailLocator.TEST_RUN.get());
+                wd.get(TEST_RUN.get());
+                log("Current TEST RUN opens:  " + TEST_RUN.get());
                 //   Thread.sleep(3000);
 
-                wd.findElement(By.xpath(TestRailLocator.STATUS_MENU.get())).click();
+                wd.findElement(By.xpath(STATUS_MENU.get())).click();
                 //   Thread.sleep(2000);
-                wd.findElement(By.xpath(TestRailLocator.STATUS_MENU_PASSED.get())).click();
+                wd.findElement(By.xpath(STATUS_MENU_PASSED.get())).click();
                 //   Thread.sleep(2000);
 
                 log("OPen menu and select PASSED");
 
                 String elapsed = Integer.toString(1 + (int) (Math.random() * 20));
-                wd.findElement(By.id(TestRailLocator.ELAPSED_BOX_ID.get())).sendKeys(elapsed);
+                wd.findElement(By.id(ELAPSED_BOX_ID.get())).sendKeys(elapsed);
                 log("Elapsed time " + elapsed);
 
                 //   Thread.sleep(2000);
 
-                wd.findElement(By.id(TestRailLocator.ADD_RESULT_SUBMIT_BTN_ID.get())).click();
+                wd.findElement(By.id(ADD_RESULT_SUBMIT_BTN_ID.get())).click();
                 log("Submit result");
 
                 Thread.sleep(1000);

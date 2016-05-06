@@ -14,7 +14,7 @@ public class Starter {
         timesheets.testCreateTimesheets();
         timesheets.finish();*/
 
-        InviteUser user = new InviteUser();
+        InviteUser user = new InviteUser(v15b);
         user.testInviteUser();
         user.finish();
     }

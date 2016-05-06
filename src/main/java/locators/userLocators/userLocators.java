@@ -7,7 +7,8 @@ public enum userLocators implements element {
     FIELD_FIRST_NAME("firstName"),
     FIELD_LAST_NAME("lastName"),
     FIELD_EMAIL("email"),
-    FIELD_USERNAME("userName"),
+    FIELD_USERNAME("UserNameTextField"),
+    NEW_PROFILE("//div[@class='MsgBox BlueBoxBorder']//strong/div"),
 
     BTN_INVITE("SubmitButton");
 

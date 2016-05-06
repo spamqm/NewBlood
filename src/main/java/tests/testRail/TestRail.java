@@ -3,10 +3,11 @@ package tests.testRail;
 
 import org.openqa.selenium.By;
 import tests.TestBase;
+import tests.testAble;
 
 import static locators.testRailLocators.TestRailLocator.*;
 
-public class TestRail extends TestBase {
+public class TestRail extends TestBase implements testAble {
 
 
     // Locators;

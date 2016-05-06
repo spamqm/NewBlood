@@ -46,8 +46,8 @@ public class CreateNewLayout extends TestBase implements testAble {
         testLogin("gregoryk", "gregory82");
 
 
-        wd.get(getMainUrl() + DASHBOARD_LAYOUTS_PAGE.get());
-        log("Open dash page");
+        openPage();
+
 
         // add new button
         wd.findElement(By.xpath(BUTTON_ADD_NEW.get())).click();
@@ -84,4 +84,14 @@ public class CreateNewLayout extends TestBase implements testAble {
 
     }
 
+    @Override
+    public void openPage() {
+        wd.get(getMainUrl() + DASHBOARD_LAYOUTS_PAGE.get());
+        log("Open dash page");
+    }
+
+    @Override
+    public void save() {
+
+    }
 }

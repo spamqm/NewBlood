@@ -169,6 +169,16 @@ public class TestBase implements testAble {
         wd.get(getMainUrl());
     }
 
+    @Override
+    public void openPage() {
+        
+    }
+
+    @Override
+    public void save() {
+
+    }
+
 /*
     public void oneMore() {
 

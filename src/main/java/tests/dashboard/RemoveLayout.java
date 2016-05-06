@@ -26,8 +26,8 @@ public class RemoveLayout extends TestBase implements testAble {
 
 
         log("\n________ REMOVE DASHBOARD LAYOUT");
-        wd.get(getMainUrl() + DASHBOARD_LAYOUTS_PAGE.get());
-        log("Open dashboard layouts page");
+        openPage();
+
 
         wd.findElement(By.xpath(REMOVE_LAYOUT_CHECKBOX.replace(layoutName))).click();
         log("Select : " + layoutName + " project for removing");
@@ -41,4 +41,15 @@ public class RemoveLayout extends TestBase implements testAble {
 
     }
 
+    @Override
+    public void openPage() {
+        wd.get(getMainUrl() + DASHBOARD_LAYOUTS_PAGE.get());
+        log("Open dashboard layouts page");
+
+    }
+
+    @Override
+    public void save() {
+
+    }
 }

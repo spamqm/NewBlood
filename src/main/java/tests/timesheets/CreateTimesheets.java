@@ -4,9 +4,10 @@ import org.openqa.selenium.By;
 import tests.TestBase;
 import tests.testAble;
 
+
 import static locators.timesheetsLocators.TimesheetsPageLocators.*;
 
-public class CreateTimesheets extends TestBase implements testAble {
+public class CreateTimesheets extends TestBase implements testAble, timeSheetValues {
 
     public CreateTimesheets() {
     }
@@ -29,7 +30,7 @@ public class CreateTimesheets extends TestBase implements testAble {
         log("Open the HOME page");
         openHomePage();
 
-        log("Open the Timesheets page");
+        log("Open the TimeSheets page");
         openPage();
 
         log("Select work item");
@@ -37,12 +38,14 @@ public class CreateTimesheets extends TestBase implements testAble {
 
 
         log("Charge table with data");
+        chargeDay(1, MON, "1");
 
 
         log("Enter description");
 
 
-        log("Submit timesheets week");
+        log("Submit timeSheets week");
+        saveAndSubmit();
 
 
         log("Open the Manage Time page");
@@ -53,13 +56,13 @@ public class CreateTimesheets extends TestBase implements testAble {
 
     }
 
-    protected void openPage() {
+    public void openPage() {
 
         wd.findElement(By.xpath(MENU_PROFILE.get())).click();
         wd.findElement(By.xpath(TIMESHETS_PAGE.get())).click();
     }
 
-    protected void save() {
+    public void save() {
         wd.findElement(By.xpath(BUTTON_SAVE.get())).click();
     }
 
@@ -68,13 +71,20 @@ public class CreateTimesheets extends TestBase implements testAble {
     }
 
     protected void selectWorkItem() {
-        selectWorkItem(0);
+        selectWorkItem(0, "Gregory");
     }
 
-    protected void selectWorkItem(int i) {
+    protected void selectWorkItem(int i, String name) {
         wd.findElement(By.xpath(WORK_ITEM_EDITABLE.replace(i))).click();
-        wd.findElement(By.xpath(WORK_ITEM_EDITABLE.get())).click();
+
+        log("1 - SELECTOR opens");
+        wd.findElement(By.xpath(TAB_BROWSE.get())).click();
+        log("2 - BROWSE tab is selected");
+
+        wd.findElement(By.xpath(WORK_ITEM_BROWSE_TAB.replace(name))).click();
+        log("3 - WORK_ITEM is selected");
     }
+
 
     protected void chargeDay(int line, int day, String hour) {
 

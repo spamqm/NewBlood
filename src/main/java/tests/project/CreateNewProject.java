@@ -68,18 +68,8 @@ public class CreateNewProject extends TestBase implements testAble {
         wd.findElement(By.id(FINISH_BTN_ID.get())).click();
 
         // Check warnings
-        if (isElementPresent(By.xpath(REDBOX.get()))) {
-            List<WebElement> we = wd.findElements(By.xpath(REDBOX.get()));
-            for (int i = 0; i < we.size(); i++) {
-                String temp = we.get(i).getText();
+        // checkWarnings();
 
-                log("####### " + getTag(temp));
-
-                wd.findElement(By.xpath("//th[contains(.,'" + getTag(temp) + "')]/following::input[1]")).sendKeys("1234");
-            }
-            wd.findElement(By.id(FINISH_BTN_ID.get())).click();
-
-        }
 
     }
 
@@ -107,6 +97,22 @@ public class CreateNewProject extends TestBase implements testAble {
 
     public String getCurrentProject() {
         return currentProject;
+    }
+
+    public void checkWarnings() {
+
+        if (isElementPresent(By.xpath(REDBOX.get()))) {
+            List<WebElement> we = wd.findElements(By.xpath(REDBOX.get()));
+            for (int i = 0; i < we.size(); i++) {
+                String temp = we.get(i).getText();
+
+                log("####### " + getTag(temp));
+
+                wd.findElement(By.xpath("//th[contains(.,'" + getTag(temp) + "')]/following::input[1]")).sendKeys("1234");
+            }
+            wd.findElement(By.id(FINISH_BTN_ID.get())).click();
+
+        }
     }
 
 

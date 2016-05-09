@@ -1,3 +1,5 @@
+import tests.project.CreateNewProject;
+import tests.project.RemoveProject;
 import tests.timesheets.CreateTimesheets;
 import tests.users.InviteUser;
 
@@ -14,8 +16,12 @@ public class Starter {
         timesheets.testCreateTimesheets();
         timesheets.finish();*/
 
-        InviteUser user = new InviteUser(v15b);
-        user.testInviteUser();
-        user.finish();
+        CreateNewProject project = new CreateNewProject(v12);
+        project.testCreateNewProject();
+        project.finish();
+
+        RemoveProject removeproject = new RemoveProject(v12);
+        removeproject.testRemoveProject(project.getCurrentProject());
+        removeproject.finish();
     }
 }

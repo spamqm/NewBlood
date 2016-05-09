@@ -22,24 +22,17 @@ public class InviteUser extends TestBase implements testAble {
     }
 
     public void testInviteUser() {
+        int i = 0;
+        do {
+            i++;
+            testLogin();
 
+            openPage();
 
-        testLogin();
-        myTimeOut();
+            enterUser("Greg" + i, "Kover" + i, i + "somemail@acacsac.com");
 
-        openPage();
-
-        enterUser("Greg1", "Kover1", "somemail@acacsac.com");
-
-        save();
-
-        if (checkProfile()) {
-            log("Profile is created successfully");
-        } else {
-        }
-        log("!!! Profile is not created");
-
-
+            save();
+        } while (!checkProfile());
     }
 
     @Override
@@ -74,6 +67,7 @@ public class InviteUser extends TestBase implements testAble {
     }
 
     public boolean checkProfile() {
+        myTimeOut(1);
         return isElementPresent(By.xpath(NEW_PROFILE.get()));
 
     }

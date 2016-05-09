@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 
-public class TestBase implements testAble {
+public class TestBase {
 
 
     public static WebDriver wd;
@@ -109,7 +109,7 @@ public class TestBase implements testAble {
         wd.get(mainURL);
 
 
-        myTimeOut(3);
+        myTimeOut(1);
 
         if (isElementPresent(By.xpath(LoginLoc.LOGOUT.get()))) {
 
@@ -169,15 +169,6 @@ public class TestBase implements testAble {
         wd.get(getMainUrl());
     }
 
-    @Override
-    public void openPage() {
-        
-    }
-
-    @Override
-    public void save() {
-
-    }
 
 /*
     public void oneMore() {

@@ -16,11 +16,11 @@ public class Starter {
         timesheets.testCreateTimesheets();
         timesheets.finish();*/
 
-        CreateNewProject project = new CreateNewProject(v12);
+        CreateNewProject project = new CreateNewProject(v15b);
         project.testCreateNewProject();
         project.finish();
 
-        RemoveProject removeproject = new RemoveProject(v12);
+        RemoveProject removeproject = new RemoveProject(v15b);
         removeproject.testRemoveProject(project.getCurrentProject());
         removeproject.finish();
     }

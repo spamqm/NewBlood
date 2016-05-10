@@ -30,7 +30,6 @@ public class RemoveProject extends TestBase implements testAble {
 
         openPage();
 
-        delete();
 
         if (checkDelete()) {
             log("Project is removed from the system");
@@ -66,7 +65,13 @@ public class RemoveProject extends TestBase implements testAble {
         log("Enter the project name");
         wd.findElement(By.id(SEARCH_QUICK_FIELD.get())).sendKeys(projectName);
         log("Open project");
-        wd.findElement(By.xpath(SEARCH_PROJECT.replace(projectName))).click();
+
+        if (isElementPresent(By.xpath(SEARCH_PROJECT.replace(projectName)))) {
+            wd.findElement(By.xpath(SEARCH_PROJECT.replace(projectName))).click();
+            delete();
+        } else {
+            log("Project " + projectName + " is not found");
+        }
     }
 
     @Override

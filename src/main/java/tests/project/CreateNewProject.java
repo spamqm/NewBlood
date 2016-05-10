@@ -99,6 +99,11 @@ public class CreateNewProject extends TestBase implements testAble {
         return currentProject;
     }
 
+    public void checkWorkTree(String projectName) {
+
+
+    }
+
     public void checkWarnings() {
 
         if (isElementPresent(By.xpath(REDBOX.get()))) {

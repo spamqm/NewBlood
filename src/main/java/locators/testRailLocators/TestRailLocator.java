@@ -2,9 +2,6 @@ package locators.testRailLocators;
 
 import locators.element;
 
-/**
- * Created by Gregory on 09.02.2016.
- */
 public enum TestRailLocator implements element {
 
 

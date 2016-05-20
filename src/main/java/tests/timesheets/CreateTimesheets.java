@@ -38,13 +38,22 @@ public class CreateTimesheets extends TestBase implements testAble, timeSheetVal
 
 
         log("Charge table with data");
-        chargeDay(1, MON, "1");
+        chargeDay(0, MON, "1");
+        chargeDay(0, TUE, "2");
+        chargeDay(0, WED, "3");
+        chargeDay(0, THU, "4");
+        chargeDay(0, FRI, "5");
 
 
         log("Enter description");
 
+        for (int i = 0; i < 4; i++) {
+            selectDescription(i, "Description" + i);
+            log("Description " + i);
 
-        log("Submit timeSheets week");
+        }
+
+        log("Save & Submit");
         saveAndSubmit();
 
 
@@ -81,8 +90,15 @@ public class CreateTimesheets extends TestBase implements testAble, timeSheetVal
         wd.findElement(By.xpath(TAB_BROWSE.get())).click();
         log("2 - BROWSE tab is selected");
 
-        wd.findElement(By.xpath(WORK_ITEM_BROWSE_TAB.replace(name))).click();
+        wd.findElement(By.xpath(TAB_BROWSE_WORK_ITEM.replace(name))).click();
         log("3 - WORK_ITEM is selected");
+    }
+
+    private void selectDescription(int i, String description) {
+        wd.findElement(By.xpath(BUTTON_DESCRIPTION.replace(i))).click();
+        wd.findElement(By.xpath(BUTTON_DESCRIPTION_TEXT.replace(i))).sendKeys(description);
+        wd.findElement(By.xpath(BUTTON_DESCRIPTION_CLOSE.get())).click();
+
     }
 
 

@@ -74,10 +74,5 @@ public class RemoveProject extends TestBase implements testAble {
         }
     }
 
-    @Override
-    public void save() {
-
-    }
-
 
 }

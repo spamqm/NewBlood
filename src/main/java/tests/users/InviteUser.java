@@ -43,13 +43,13 @@ public class InviteUser extends TestBase implements testAble {
 
     }
 
-    @Override
-    public void save() {
+
+    private void save() {
         wd.findElement(By.id(BTN_INVITE.get())).click();
 
     }
 
-    public void enterUser() {
+    private void enterUser() {
         enterUser("firstname1", "lastname1", "email@email.com");
     }
 

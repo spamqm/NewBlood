@@ -14,6 +14,7 @@ public class TestBase {
 
 
     public static WebDriver wd;
+    private static boolean login = true;
 
     private String profile = "c:\\Develop\\Libs\\greg-profile";  //default profile
     private String browser = "FF";

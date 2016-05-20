@@ -5,7 +5,13 @@ public enum HomePage implements element {
     SEARCH_QUICK_BTN("searchIcon"),
     SEARCH_QUICK_FIELD("qs_searchText"),
     SEARCH_PROJECT("//li[@title='" + LOCATOR_REPLACE_PATTERN + "']"
-    );
+    ),
+
+    // ADD
+
+    ADD("//a[@title='Add']"),
+    ADD_REPORT("//div[@title='Report']"),
+    ADD_REPORT_RW("//div[@id='ps_report_wizard']"),;
 
     private String loc;
 

@@ -126,10 +126,7 @@ public class CreateNewProject extends TestBase implements testAble {
 
     }
 
-    @Override
-    public void save() {
 
-    }
 }
 
 

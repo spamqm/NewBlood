@@ -30,8 +30,5 @@ public class ReviewDashboard extends TestBase implements testAble {
 
     }
 
-    @Override
-    public void save() {
 
-    }
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import tests.TestBase;
 import tests.testAble;
 
-import static locators.HomePage.*;
+import static locators.Common.*;
 import static locators.projectLocators.Project.*;
 
 public class RemoveProject extends TestBase implements testAble {

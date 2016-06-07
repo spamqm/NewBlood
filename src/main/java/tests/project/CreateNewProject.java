@@ -25,14 +25,22 @@ public class CreateNewProject extends TestBase implements testAble {
 
     private static String currentProject;
 
-    public void testCreateNewProject() throws Exception {
+    public void testCreateNewProject() {
 //Setup
         setProject();
         testLogin("gregoryk", "gregory82");
         myTimeOut();
 
+        if (isElementPresent(By.xpath(CREATE_NEW_PROJECT_PAGE.get())))
 
-        wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE.get());
+        {
+            wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE.get());
+        } else if (isElementPresent(By.xpath(CREATE_NEW_PROJECT_PAGE_OTHER.get()))) {
+            wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE_OTHER.get());
+        } else {
+            log("Work types is not found");
+            return;
+        }
 
 //Step 1
 

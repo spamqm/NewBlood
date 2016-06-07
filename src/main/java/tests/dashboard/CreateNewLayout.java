@@ -35,7 +35,7 @@ public class CreateNewLayout extends TestBase implements testAble {
         return currentlayout;
     }
 
-    public void testCreateNewLayout() throws InterruptedException {
+    public void testCreateNewLayout() {
 
         // Generate a new layout name
 
@@ -90,8 +90,5 @@ public class CreateNewLayout extends TestBase implements testAble {
         log("Open dash page");
     }
 
-    @Override
-    public void save() {
 
-    }
 }

@@ -27,9 +27,4 @@ public class Login extends TestBase implements testAble {
     public void openPage() {
 
     }
-
-    @Override
-    public void save() {
-
-    }
 }

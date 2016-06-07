@@ -139,6 +139,14 @@ public class TestBase {
 
     }
 
+
+    public void searchAndSelect(String project) {
+        //click on Search tab
+        //select Project
+        //Apply changes
+
+    }
+
     public boolean isElementPresent(By by) {
 
         try {

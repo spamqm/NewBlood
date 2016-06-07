@@ -34,7 +34,7 @@ public class CreateTimesheets extends TestBase implements testAble, timeSheetVal
         openPage();
 
         log("Select work item");
-        selectWorkItem();
+        selectWorkItem(0,"GK");
 
 
         log("Charge table with data");
@@ -47,11 +47,11 @@ public class CreateTimesheets extends TestBase implements testAble, timeSheetVal
 
         log("Enter description");
 
-        for (int i = 0; i < 4; i++) {
+        /*for (int i = 0; i < 4; i++) {
             selectDescription(i, "Description" + i);
             log("Description " + i);
 
-        }
+        }*/
 
         log("Save & Submit");
         saveAndSubmit();

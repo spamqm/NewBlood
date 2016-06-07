@@ -29,7 +29,7 @@ public class InviteUser extends TestBase implements testAble {
 
             openPage();
 
-            enterUser("Greg" + i, "Kover" + i, i + "somemail@acacsac.com");
+            enterUser("Gregory" + i, "Kover" + i, i + "somemail@acacsac.com");
 
             save();
         } while (!checkProfile());

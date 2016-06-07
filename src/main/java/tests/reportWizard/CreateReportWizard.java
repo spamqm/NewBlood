@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import tests.TestBase;
 import tests.testAble;
 
-import static locators.HomePage.*;
+import static locators.Common.*;
 import static locators.reportWizardLocators.Report.*;
 
 public class CreateReportWizard extends TestBase implements testAble {

@@ -2,6 +2,7 @@ package tests.project;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 import tests.TestBase;
 import tests.testAble;
 
@@ -25,23 +26,20 @@ public class CreateNewProject extends TestBase implements testAble {
 
     private static String currentProject;
 
+    @Test
     public void testCreateNewProject() {
 //Setup
         setProject();
         testLogin("gregoryk", "gregory82");
         myTimeOut();
 
-        if (isElementPresent(By.xpath(CREATE_NEW_PROJECT_PAGE.get())))
-
-        {
+        /*if (isElementPresent(By.xpath(CREATE_NEW_PROJECT_PAGE.get()))) {
             wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE.get());
-        } else if (isElementPresent(By.xpath(CREATE_NEW_PROJECT_PAGE_OTHER.get()))) {
-            wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE_OTHER.get());
         } else {
-            log("Work types is not found");
-            return;
-        }
+            wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE_OTHER.get());
+        }*/
 
+        wd.get(getMainUrl() + CREATE_NEW_PROJECT_PAGE.get());
 //Step 1
 
         wd.findElement(By.xpath(WORK_TYPE_NAME.get())).click(); //Select work type

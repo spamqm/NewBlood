@@ -98,4 +98,8 @@ public class TestRail extends TestBase implements testAble {
     }
 
 
+    @Override
+    public void openPage() {
+
+    }
 }

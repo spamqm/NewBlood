@@ -8,7 +8,7 @@ public enum CreateNewProjectLoc implements element {
     //STEP 1
 
     CREATE_NEW_PROJECT_PAGE("/project/CreateWork.epage"),
-    CREATE_NEW_PROJECT_PAGE_OTHER(CREATE_NEW_PROJECT_PAGE.locator + "?sp=ScreateOtherWork"),
+    CREATE_NEW_PROJECT_PAGE_OTHER("/project/CreateWork.epage?sp=ScreateOtherWork"),
     WORK_TYPE_NAME("//option[contains(text(),'Work')]"),
     NEXT_BTN_ID("next"),
 

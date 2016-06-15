@@ -47,9 +47,4 @@ public class RemoveLayout extends TestBase implements testAble {
         log("Open dashboard layouts page");
 
     }
-
-    @Override
-    public void save() {
-
-    }
 }

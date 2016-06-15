@@ -2,6 +2,8 @@ package tests;
 
 
 import locators.login.LoginLoc;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -21,7 +23,7 @@ public class TestBase {
     private String mainURL = "http://10.90.27.8:8080/qa_blank_12";
 
     public TestBase() {
-        start();
+
     }
 
     public TestBase(String mainURL) {
@@ -49,6 +51,7 @@ public class TestBase {
         return mainURL;
     }
 
+    @BeforeTest
     public void start() {
 
         FirefoxProfile profile = new FirefoxProfile(new File(this.profile));
@@ -79,7 +82,7 @@ public class TestBase {
                 SECONDS);
     }
 
-
+    @AfterTest
     public void finish() {
 
         log("Browser is closed");
